@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Email Sender</title>
+<title>Comments!</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="javascripts/email.js"></script>
+<script src="javascripts/comments.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
-<form id="commentForm" action="">
-<!-- <label for="from">From: </label><input type="email" id="from" placeholder="Enter Sender Email"> -->
-
-<label for="to">To: </label><input type="email" id="to" placeholder="Enter Recipient Email"><br>
-
-<label for="subject">Subject: </label><input type="text" id="subject" placeholder="Enter Subject"><br>
-
-<label for="message">Message: </label><textarea type="text" id="message" placeholder="Enter Message"></textarea><br>
-</form>
-
-<button id="sendBtn" onclick="sendFunction();">Send Msg</button>
-<button id="clearBtn" onclick="clearFunction();">Clear Msg</button>
-<div id="json"></div>
-<div id="done"></div>
-<div id="comments"></div>
+<div class="card container">
+  <form class='form-group' id="commentForm" action="">
+    <div class="form-group row">
+      <label for="name" class="col-2 col-form-label">Name: </label>
+      <div class='col-10'>
+        <input class='form-control' type="text" id="name" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="comment" class="col-2 col-form-label">Comment: </label>
+      <div class='col-10'>
+        <input class='form-control' type="text" id="comment" placeholder="Comment">
+      </div>
+    </div>
+  </form>
+  <div>
+    <button class='btn btn-secondary' id="postComment">Post Comment</button>
+    <button class='btn btn-secondary' id="getComments">Get Comments</button>
+    <button class='btn btn-secondary' id="deleteComments">Delete All</button>
+  </div>
+  <div id="json"></div>
+  <div id="done"></div>
+  <div id="comments"></div>
+</div>
 </body>
 </html>
