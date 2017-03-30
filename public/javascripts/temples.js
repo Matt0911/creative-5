@@ -19,6 +19,7 @@ $(document).ready(function(){
   ]
 
   $("#save").click(function(){
+    if ($("#name").val() != '') {
       var myobj = {Name:$("#name").val(),Temples:{}};
       for (var i = 0, len = ids.length; i < len; i++) {
         myobj.Temples[ids[i]] = $('#'+ids[i]).prop('checked');
@@ -34,21 +35,23 @@ $(document).ready(function(){
         data: jobj,
         contentType: "application/json; charset=utf-8",
       });
+    }
   });
 
   $("#load").click(function() {
-    // TODO add parameter to route for Name to get doc for inputed name
-    $.getJSON('temples', function(data) {
-      console.log(data);
-      for (temple in data[0].Temples) {
-        if (data[0].Temples[temple]) {
-          $('#'+ temple).prop('checked', true);
+    if ($("#name").val() != '') {
+      $.getJSON('temples/' + $("#name").val(), function(data) {
+        console.log(data);
+        for (temple in data.Temples) {
+          if (data.Temples[temple]) {
+            $('#'+ temple).prop('checked', true);
+          }
+          else {
+            $('#'+ temple).prop('checked', false);
+          }
         }
-        else {
-          $('#'+ temple).prop('checked', false);
-        }
-      }
-    })
+      });
+    }
   });
 
 });

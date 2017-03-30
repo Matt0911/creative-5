@@ -21,31 +21,46 @@ db.once('open', function() { //Lets us know when we're connected
 router.post('/temples', function(req, res, next) {
   console.log("POST temples route");
   console.log(req.body);
-  var newtemples = new Temples(req.body);
-  // TODO check if exists and update
-  // person.anything = { x: [3, 4, { y: "changed" }] };
-  // person.markModified('anything');
-  // person.save(); // anything will now get saved
-  console.log(newtemples);
-  newtemples.save(function(err, post) {
 
+  var query = Temples.findOne({Name: req.body.Name});
+  query.exec(function(err, person) {
     if (err) return console.error(err);
-    console.log(post);
-    res.sendStatus(200);
-  });
-});
-
-/* GET comments from database */
-router.get('/temples', function(req, res, next) {
-  console.log("In the GET route?");
-  Temples.find(function(err,templeList) { //Calls the find() method on your database
-    if (err) return console.error(err); //If there's an error, print it out
+    if (person === null) {
+      var newtemples = new Temples(req.body);
+      console.log(newtemples);
+      newtemples.save(function(err, post) {
+        if (err) return console.error(err);
+        console.log(post);
+        res.sendStatus(200);
+      });
+    }
     else {
-      console.log(templeList); //Otherwise console log the comments you found
-      res.json(templeList);
-
+      for (temple in person.Temples) {
+        person.Temples[temple] = req.body.Temples[temple];
+      }
+      person.markModified('Temples');
+      person.save(function(err, post) {
+        if (err) console.error(err);
+        console.log(post);
+        res.sendStatus(200);
+      });
     }
   })
+});
+
+router.param('name', function(req, res, next, name) {
+  console.log('find one: ' + name);
+  var query = Temples.findOne({Name: name});
+  query.exec(function (err, person) {
+    if (err) return next(err);
+    res.json(person);
+  })
+})
+
+router.get('/temples/:name', function(req, res, next) {
+  console.log('get name');
+  console.log(req.name);
+  res.json(req.name);
 });
 
 router.delete('/comment', function(req, res, next) {
