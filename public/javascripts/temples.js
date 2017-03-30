@@ -39,7 +39,7 @@ $(document).ready(function(){
   $("#load").click(function() {
     $.getJSON('temples', function(data) {
       console.log(data);
-      for (temple in data.Temples) {
+      for (temple in data[0].Temples) {
         console.log(temple.Name + ': ' + temple.Visited);
       }
     })
