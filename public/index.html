@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comments!</title>
+<title>Temples Visit Log</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="javascripts/comments.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
-<div class="card container">
-  <form class='form-group' id="commentForm" action="">
-    <div class="form-group row">
-      <label for="name" class="col-2 col-form-label">Name: </label>
-      <div class='col-10'>
-        <input class='form-control' type="text" id="name" placeholder="Name">
+
+<div id="main-container">
+  <div id="temple-list">
+    <form>
+      <label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br>
+      <div>
+        <button id="load">Load</button>
+        <button id="save">Save</button>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="comment" class="col-2 col-form-label">Comment: </label>
-      <div class='col-10'>
-        <input class='form-control' type="text" id="comment" placeholder="Comment">
-      </div>
-    </div>
-  </form>
-  <div>
-    <button class='btn btn-secondary' id="postComment">Post Comment</button>
-    <button class='btn btn-secondary' id="getComments">Get Comments</button>
-    <button class='btn btn-secondary' id="deleteComments">Delete All</button>
+      <input type="checkbox" name="">Bountiful Utah<br>
+      <input type="checkbox" name="">Brigham City Utah<br>
+      <input type="checkbox" name="">Draper Utah<br>
+      <input type="checkbox" name="">Jordan River Utah<br>
+      <input type="checkbox" name="">Logan Utah<br>
+      <input type="checkbox" name="">Manti Utah<br>
+      <input type="checkbox" name="">Monticello Utah<br>
+      <input type="checkbox" name="">Mount Timpanogos Utah<br>
+      <input type="checkbox" name="">Ogden Utah<br>
+      <input type="checkbox" name="">Oquirrh Mountain Utah<br>
+      <input type="checkbox" name="">Payson Utah<br>
+      <input type="checkbox" name="">Provo City Center<br>
+      <input type="checkbox" name="">Provo Utah<br>
+      <input type="checkbox" name="">St. George Utah<br>
+      <input type="checkbox" name="">Salt Lake Utah<br>
+      <input type="checkbox" name="">Vernal Utah
+    </form>
   </div>
-  <div id="json"></div>
-  <div id="done"></div>
-  <div id="comments"></div>
+  <div id="map">Map here</div>
 </div>
+
 </body>
 </html>
