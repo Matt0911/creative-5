@@ -19,11 +19,13 @@ db.once('open', function() { //Lets us know when we're connected
 
 
 router.post('/temples', function(req, res, next) {
-  console.log("POST temples route"); //[1]
-  console.log(req.body); //[2]
-  var newtemples = new Temples(req.body); //[3]
-  console.log(newtemples); //[3]
-  newtemples.save(function(err, post) { //[4]
+  console.log("POST temples route");
+  console.log(req.body);
+  var newtemples = new Temples(req.body);
+
+  console.log(newtemples);
+  newtemples.save(function(err, post) {
+
     if (err) return console.error(err);
     console.log(post);
     res.sendStatus(200);
