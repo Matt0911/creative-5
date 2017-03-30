@@ -18,6 +18,8 @@ $(document).ready(function(){
     'vernal'
   ]
 
+  $("#saveNote").hide()
+
   $("#save").click(function(){
     if ($("#name").val() != '') {
       var myobj = {Name:$("#name").val(),Temples:{}};
@@ -34,7 +36,7 @@ $(document).ready(function(){
         type: "POST",
         data: jobj,
         contentType: "application/json; charset=utf-8",
-      });
+      }).then($("#saveNote").show().delay(2000).fadeOut());
     }
   });
 
