@@ -37,6 +37,7 @@ $(document).ready(function(){
   });
 
   $("#load").click(function() {
+    // TODO add parameter to route for Name to get doc for inputed name
     $.getJSON('temples', function(data) {
       console.log(data);
       for (temple in data[0].Temples) {

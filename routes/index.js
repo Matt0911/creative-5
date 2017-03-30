@@ -22,7 +22,10 @@ router.post('/temples', function(req, res, next) {
   console.log("POST temples route");
   console.log(req.body);
   var newtemples = new Temples(req.body);
-
+  // TODO check if exists and update
+  // person.anything = { x: [3, 4, { y: "changed" }] };
+  // person.markModified('anything');
+  // person.save(); // anything will now get saved
   console.log(newtemples);
   newtemples.save(function(err, post) {
 
