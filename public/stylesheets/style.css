@@ -75,11 +75,64 @@ input {
   height: 500px;
   width: 100%;
   margin-left: 10px;
+  position: relative;
 }
 
-#bottom-layer-map {
+#map > div {
   height: 100%;
-  background-image: url("../utahTemples.jpg");
+  width: 100%;
+  position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#bottom-layer-map {
+  background-image: url("../utahTemples.jpg");
+}
+#bountiful-map {
+  background-image: url("../bountiful.png");
+}
+#brighamCity-map {
+  background-image: url("../brighamCity.png");
+}
+#draper-map {
+  background-image: url("../draper.png");
+}
+#jordanRiver-map {
+  background-image: url("../jordanRiver.png");
+}
+#logan-map {
+  background-image: url("../logan.png");
+}
+#manti-map {
+  background-image: url("../manti.png");
+}
+#monticello-map {
+  background-image: url("../monticello.png");
+}
+#mountTimpanogos-map {
+  background-image: url("../mountTimpanogos.png");
+}
+#ogden-map {
+  background-image: url("../ogden.png");
+}
+#oquirrhMountain-map {
+  background-image: url("../oquirrhMountain.png");
+}
+#payson-map {
+  background-image: url("../payson.png");
+}
+#provoCityCenter-map {
+  background-image: url("../provoCityCenter.png");
+}
+#provo-map {
+  background-image: url("../provo.png");
+}
+#stGeorge-map {
+  background-image: url("../stGeorge.png");
+}
+#saltLake-map {
+  background-image: url("../saltLake.png");
+}
+#vernal-map {
+  background-image: url("../vernal.png");
 }
