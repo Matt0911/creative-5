@@ -1,20 +1,20 @@
 function checkSelected() {
   var ids = [
     'bountiful',
-    'brigham-city',
+    'brighamCity',
     'draper',
-    'jordan-river',
+    'jordanRiver',
     'logan',
     'manti',
     'monticello',
-    'mount-timpanogos',
+    'mountTimpanogos',
     'ogden',
-    'oquirrh-mountain',
+    'oquirrhMountain',
     'payson',
-    'provo-city-center',
+    'provoCityCenter',
     'provo',
-    'st-george',
-    'salt-lake',
+    'stGeorge',
+    'saltLake',
     'vernal'
   ]
   for (var i = 0, len = ids.length; i < len; i++) {
