@@ -44,7 +44,7 @@ $(document).ready(function(){
         console.log(data);
         if (data === null) {
           for (var i = 0, len = ids.length; i < len; i++) {
-            myobj.Temples[ids[i]] = $('#'+ids[i]).prop('checked', false);
+            $('#'+ids[i]).prop('checked', false);
           }
         }
         else {
@@ -57,8 +57,8 @@ $(document).ready(function(){
             }
           }
         }
+        checkSelected();
       });
-      checkSelected();
     }
   });
 
