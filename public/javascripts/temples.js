@@ -42,15 +42,23 @@ $(document).ready(function(){
     if ($("#name").val() != '') {
       $.getJSON('temples/' + $("#name").val(), function(data) {
         console.log(data);
-        for (temple in data.Temples) {
-          if (data.Temples[temple]) {
-            $('#'+ temple).prop('checked', true);
+        if (data === null) {
+          for (var i = 0, len = ids.length; i < len; i++) {
+            myobj.Temples[ids[i]] = $('#'+ids[i]).prop('checked', false);
           }
-          else {
-            $('#'+ temple).prop('checked', false);
+        }
+        else {
+          for (temple in data.Temples) {
+            if (data.Temples[temple]) {
+              $('#'+ temple).prop('checked', true);
+            }
+            else {
+              $('#'+ temple).prop('checked', false);
+            }
           }
         }
       });
+      checkSelected();
     }
   });
 
