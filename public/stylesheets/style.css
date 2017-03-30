@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   background-color: #fcfcfc;
+  max-width: 720px;
 }
 
 a {
@@ -67,4 +68,18 @@ input {
 
 #temple-list {
   width: 300px;
+  margin-right: 10px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  margin-left: 10px;
+}
+
+#bottom-layer-map {
+  height: 100%;
+  background-image: url("../utahTemples.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
