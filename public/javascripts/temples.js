@@ -40,6 +40,7 @@ $(document).ready(function(){
     $.getJSON('temples', function(data) {
       console.log(data);
       for (temple in data[0].Temples) {
+        console.log(temple);
         console.log(temple.Name + ': ' + temple.Visited);
       }
     })
