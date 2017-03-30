@@ -6,7 +6,7 @@ var mongoose = require('mongoose'); //Adds mongoose as a usable dependency
 mongoose.connect('mongodb://localhost/templeDB');
 var templeSchema = mongoose.Schema({ //Defines the Schema for this database
   Name: String,
-  Temples: {Name: String, Visited: Boolean}
+  Temples: Schema.Types.Mixed
 });
 
 var Temples = mongoose.model('Temples', templeSchema); //Makes an object from that schema as a model
